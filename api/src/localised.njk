@@ -1,0 +1,27 @@
+---
+title: A title for a document
+layout: base.njk
+pagination:
+  data: news
+  size: 1
+  alias: news
+permalink: /{{ news.country }}/index.html
+---
+
+    <div class="container">
+        <h1>A page with a dog or hotdog</h1>
+        <div class="message">What will I be? </div>
+        <div class="content">            
+            <h4>Bushwick woke occupy slow-carb, irony humblebrag disrupt asymmetrical kale chips sustainable gentrify squid sriracha cornhole mumblecore</h4>
+        </div>
+
+            <ul>
+                {% for article in news.articles %}
+                <li>
+                    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                    <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+                </li>
+                {% endfor %}
+            </ul>            
+    </div>
+    <script src="js/dogmessage.js"></script>
